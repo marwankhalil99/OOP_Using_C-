@@ -1,0 +1,79 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "process",
+        "label": "C/C++: Build .exe",
+        "command": "C:\\MinGW\\bin\\g++.exe",
+        "args": ["-g",
+                 "${file}",
+                 "-o", 
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                 "${workspaceFolder}\\Home\\build\\${fileBasenameNoExtension}.exe",
+                 "-lbgi",
+                 "-lgdi32",
+                 "-lcomdlg32",
+                 "-luuid",
+                 "-loleaut32",
+                 "-lole32"
+                ],
+        "options": {
+          "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "detail": "compiler: C:\\MinGW\\bin\\g++.exe"
+      }
+    ],
+    "configurations": [
+        
+        {
+            "name": "(gdb) Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/path/to/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+    {
+        "name": "(gdb) Launch",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "enter program name, for example ${workspaceFolder}/a.exe",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${fileDirname}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "miDebuggerPath": "/path/to/gdb",
+        "setupCommands": [
+            {
+                "description": "Enable pretty-printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            },
+            {
+                "description": "Set Disassembly Flavor to Intel",
+                "text": "-gdb-set disassembly-flavor intel",
+                "ignoreFailures": true
+            }
+        ]
+    }
+    ]
+  }
